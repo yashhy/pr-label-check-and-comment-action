@@ -1,0 +1,16 @@
+name: 'PR Label Check and Comment'
+author: 'yashhy'
+description: 'Checks for required PR label, adds comment and fails PR checks if none of the required labels are provided'
+branding:
+  icon: 'git-pull-request'
+  color: 'green'
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token'
+    required: true
+  required_labels:
+    description: 'List of required labels'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
